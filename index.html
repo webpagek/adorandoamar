@@ -16,6 +16,34 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 #main {margin-left: 120px}
 /* Remove margins from "page content" on small screens */
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+  
+    .gallery-container {
+      overflow-x: auto; /* Permite desplazamiento horizontal */
+      white-space: nowrap; /* Mantiene las imágenes en línea */
+      scroll-snap-type: x mandatory; /* Snap para una experiencia más fluida */
+    }
+
+    .gallery-container img {
+      display: inline-block;
+      width: 300px;
+      height: 200px;
+      object-fit: cover; /* Ajusta las imágenes sin distorsión */
+      margin: 5px;
+      scroll-snap-align: start; /* Alinea las imágenes en el contenedor */
+    }
+
+    .gallery-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .gallery-container::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 4px;
+    }
+
+    .gallery-container::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
+    }
 </style>
 </head>
 <body class="w3-black">
@@ -53,38 +81,15 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <hr style="width:200px" class="w3-opacity">
 
     <!-- Grid for photos -->
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-third">
-        <img src="1.jpg" style="width:100%">    
-        <img src="16.jpg" style="width:100%">
-        <img src="3.jpg" style="width:100%">
-        <img src="15.jpg" style="width:100%">
-        <img src="4.jpg" style="width:100%">     
-       
-    </div>
-    
-    <div class="w3-third">
-      <img src="14.jpg" style="width:100%">
-        <img src="17.jpg" style="width:100%">
-        <img src="10.jpg" style="width:100%">
-        <img src="12.jpg" style="width:100%">
-        <img src="11.jpg" style="width:100%">
-        <img src="6.jpg" style="width:100%">
-    </div>
-    
-    <div class="w3-third">
-      <img src="2.jpg" style="width:100%">
-      <img src="7.jpg" style="width:100%">
-        <img src="13.jpg" style="width:100%">
-        <img src="5.jpg" style="width:100%">
-        
-        <img src="8.jpg" style="width:100%">
-        
-        
-    </div>
-    
-    <!-- End photo grid -->
-    </div>
+    <div class="gallery-container">
+  <img src="1.jpg" alt="Imagen 1">
+  <img src="2.jpg" alt="Imagen 2">
+  <img src="3.jpg" alt="Imagen 3">
+  <img src="4.jpg" alt="Imagen 4">
+  <img src="5.jpg" alt="Imagen 5">
+  <img src="6.jpg" alt="Imagen 6">
+  <img src="7.jpg" alt="Imagen 7">
+</div>
   <!-- End Portfolio Section -->
   </div>
 
