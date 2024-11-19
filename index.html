@@ -17,37 +17,35 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 /* Remove margins from "page content" on small screens */
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
   
-  
-    .carousel {
-      position: relative;
-      width: 100%;
-      height: 100vh; /* Ocupa toda la pantalla */
-      overflow: hidden; /* Esconde las imágenes fuera de la vista */
+    .gallery-container {
+      overflow-x: auto; /* Permite desplazamiento horizontal */
+      white-space: nowrap; /* Mantiene las imágenes en línea */
+      scroll-snap-type: x mandatory; /* Snap para alineación natural */
+      padding: 10px;
     }
 
-    .carousel-inner {
-      display: flex;
-      flex-direction: column; /* Alineación vertical */
-      height: 500%; /* Cinco veces la altura para incluir todas las imágenes */
-      animation: slide 15s infinite; /* Animación automática */
+    .gallery-container img {
+      display: inline-block;
+      width: auto;
+      height: 200px; /* Altura uniforme */
+      object-fit: cover; /* Ajusta las imágenes verticales y horizontales */
+      margin-right: 10px; /* Espaciado entre imágenes */
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      scroll-snap-align: start; /* Alinea la imagen en el contenedor */
     }
 
-    .carousel-inner img {
-      width: 100%;
-      height: 100vh; /* Cada imagen ocupa la altura completa */
-      object-fit: cover; /* Ajusta imágenes verticales y horizontales */
+    .gallery-container::-webkit-scrollbar {
+      height: 8px;
     }
 
-    @keyframes slide {
-      0% { transform: translateY(0); }
-      20% { transform: translateY(0); }
-      25% { transform: translateY(-100%); }
-      45% { transform: translateY(-100%); }
-      50% { transform: translateY(-200%); }
-      70% { transform: translateY(-200%); }
-      75% { transform: translateY(-300%); }
-      95% { transform: translateY(-300%); }
-      100% { transform: translateY(-400%); }
+    .gallery-container::-webkit-scrollbar-thumb {
+      background-color: #888;
+      border-radius: 4px;
+    }
+
+    .gallery-container::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
     }
 </style>
 </head>
@@ -86,8 +84,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <hr style="width:200px" class="w3-opacity">
 
     <!-- Grid for photos -->
-   <div class="carousel">
-  <div class="carousel-inner">
+   <div class="gallery-container">
   <img src="1.jpg" alt="Imagen 1">
   <img src="2.jpg" alt="Imagen 2">
   <img src="3.jpg" alt="Imagen 3">
@@ -105,7 +102,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
       <img src="15.jpg" alt="Imagen 7">
       <img src="16.jpg" alt="Imagen 7">
       <img src="17.jpg" alt="Imagen 7">
-  </div>    
+   
 </div>
   <!-- End Portfolio Section -->
   </div>
