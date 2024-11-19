@@ -17,19 +17,23 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 /* Remove margins from "page content" on small screens */
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
   
+    
     .gallery-container {
       overflow-x: auto; /* Permite desplazamiento horizontal */
       white-space: nowrap; /* Mantiene las imágenes en línea */
-      scroll-snap-type: x mandatory; /* Snap para una experiencia más fluida */
+      scroll-snap-type: x mandatory; /* Snap para alineación natural */
+      padding: 10px;
     }
 
     .gallery-container img {
       display: inline-block;
-      width: 300px;
-      height: 200px;
-      object-fit: cover; /* Ajusta las imágenes sin distorsión */
-      margin: 5px;
-      scroll-snap-align: start; /* Alinea las imágenes en el contenedor */
+      width: auto;
+      height: 200px; /* Altura uniforme */
+      object-fit: cover; /* Ajusta las imágenes verticales y horizontales */
+      margin-right: 10px; /* Espaciado entre imágenes */
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      scroll-snap-align: start; /* Alinea la imagen en el contenedor */
     }
 
     .gallery-container::-webkit-scrollbar {
