@@ -1,134 +1,230 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>Adorando Amar - Un Monólogo de Dora Maar</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
-/* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 120px;background: #222;}
-/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-#main {margin-left: 120px}
-/* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {#main {margin-left: 0}}
-  
+  <title>Adorando Amar - Un Monólogo de Dora Maar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Montserrat", sans-serif
+    }
+
+    .w3-row-padding img {
+      margin-bottom: 12px
+    }
+
+    /* Set the width of the sidebar to 120px */
+    .w3-sidebar {
+      width: 120px;
+      background: #222;
+    }
+
+    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+    #main {
+      margin-left: 120px
+    }
+
+    /* Remove margins from "page content" on small screens */
+    @media only screen and (max-width: 600px) {
+      #main {
+        margin-left: 0
+      }
+    }
+
+
     .gallery-container {
-      overflow-x: auto; /* Permite desplazamiento horizontal */
-      white-space: nowrap; /* Mantiene las imágenes en línea */
-      scroll-snap-type: x mandatory; /* Snap para alineación natural */
-      padding: 10px;
+            column-count: 4; /* Número de columnas en el diseño */
+            column-gap: 10px; /* Espaciado entre columnas */
+            padding: 10px;
+        }
+
+        .gallery-container img {
+            width: 100%;
+            margin-bottom: 10px; /* Espaciado entre imágenes */
+            display: block;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease;
+        }
+
+        .gallery-container img:hover {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-container {
+                column-count: 2; /* Menos columnas en pantallas pequeñas */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-container {
+                column-count: 1; /* Solo una columna en móviles */
+            }
+        }
+
+   
+
+    .w3-container2 {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 15px;
+      flex-wrap: wrap;
+      /* Permite que el contenido se ajuste en pantallas pequeñas */
+      margin: 20px;
     }
 
-    .gallery-container img {
-      display: inline-block;
-      width: auto;
-      height: 200px; /* Altura uniforme */
-      object-fit: cover; /* Ajusta las imágenes verticales y horizontales */
-      margin-right: 10px; /* Espaciado entre imágenes */
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-      scroll-snap-align: start; /* Alinea la imagen en el contenedor */
+    .video-container {
+      flex: 0 0 auto;
+      /* Evita que el video cambie de tamaño innecesariamente */
+      width: 300px;
+      /* Ajusta el ancho del video */
+      max-width: 100%;
+      aspect-ratio: 9 / 16;
+      /* Proporción vertical */
     }
 
-    .gallery-container::-webkit-scrollbar {
-      height: 8px;
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
     }
 
-    .gallery-container::-webkit-scrollbar-thumb {
-      background-color: #888;
-      border-radius: 4px;
+    .text-content {
+      flex: 1;
+      /* Ocupa el espacio restante */
+      max-width: 600px;
+      /* Máximo ancho para texto */
+      text-align: justify;
     }
-
-    .gallery-container::-webkit-scrollbar-thumb:hover {
-      background-color: #555;
-    }
-</style>
+    p {
+      color:white;
+    } 
+  </style>
 </head>
+
 <body class="w3-black">
 
-<!-- Page Content -->
-<div class="w3-padding-large" id="main">
-  <!-- Header/Home -->
-  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <h1 class="w3-jumbo w3-text-red">Adorando Amar</h1>
-    <p>Un monólogo de Dora Maar</p>
-  
-    <img src="dora.jpg" alt="Dora Maar" class="w3-image w3-round-large" width="300">
-    <a src="https://www.instagram.com/adorandoamar/" class="w3-text-red"><i class="fa fa-instagram w3-hover-opacity w3-xlarge w3-text-red"></i> AdorandoAmar</a></br>
-  </header>
+  <!-- Page Content -->
+  <div class="w3-padding-large" id="main">
+    <!-- Header/Home -->
+    <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+      <h1 class="w3-jumbo w3-text-red">Adorando Amar</h1>
+      <p>Un monólogo de Dora Maar</p>
+      <p><a href="https://www.instagram.com/adorandoamar/" class="w3-text-red"><i
+        class="fa fa-instagram w3-hover-opacity w3-xlarge w3-text-red"></i> AdorandoAmar</a></p>
 
-  <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-    <hr style="width:200px" class="w3-opacity">
-    <p>Dora Maar, ¿quién? ¿La fotógrafa, la pintora, la amante retratada? Dora del blanco y el negro. Ninguna. Todas a la vez.  </p>
-        <hr style="width:200px" class="w3-opacity">
-        <h3 class="w3-padding-24 w3-text-light-grey">Trailer:</h3>  
-        <div class="w3-container w3-display-container w3-center">
-          <video src="video.mp4" width="400" controls></video>
+      <img src="dora.jpg" alt="Dora Maar" class="w3-image w3-round-large" width="300">
+     
+        <p> Escrito y dirigido por: Alba Berrocal</p>
+        <p> Fotografía: Reyes Cuesta</p>
+    </header>
+
+    <!-- About Section -->
+    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+      <hr style="width:200px" class="w3-opacity">
+      <p>¿Adorando qué? Amar</p>
+
+      <p>¿Quién? Dora Maar</p>
+        
+      <p> Dora Maar... ¿La fotógrafa, la artista, la amante que llora, la pintora, la surrealista católica, la de izquierdas, la que se sienta a la derecha, la de negro o la que dió en el blanco?
+        
+        Todas, ninguna. La única.</p>
+        <p>  <i>"Dorita, la fotógrafa, insoportable cantaora... y qué fea"</i></p>
+        
+        
+        <p> ¿En París?</p>
+        
+        <p> No, en Málaga. </p>
+        <p><i>"Mi destino es pese a lo que parezca, magnífico. Antes decía que mi destino era, pese a lo que pareciera, muy duro." </i> - Dora Maar</p>
+      <hr style="width:200px" class="w3-opacity">
+      <h3 class="w3-padding-24 w3-text-light-grey">Trailer:</h3>
+      <div class="w3-container2 w3-display-container w3-center">
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/AMsc-xEiaUE?rel=0&modestbranding=1&autoplay=0" loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
         </div>
-    <h3 class="w3-padding-24 w3-text-light-grey">Próximas Actuaciones</h3>  
+      </div>
+      <h3 class="w3-padding-24 w3-text-light-grey">Próximas Actuaciones</h3>
 
-    <p><i class="fa fa-calendar fa-fw w3-text-white w3-xlarge w3-margin-right"></i><span class="w3-large w3-margin-right w3-text-red">Jueves, 19 de Diciembre. 21:00</span> Málaga. Centro Cultural La Llave.</p>
-    
-  <!-- End About Section -->
-  </div>
-  
-  <!-- Portfolio Section -->
-  <div class="w3-padding-64 w3-content" id="photos">
-    <h2 class="w3-text-light-grey">Galeria</h2>
-    <hr style="width:200px" class="w3-opacity">
+      <p><i class="fa fa-calendar fa-fw w3-text-white w3-xlarge w3-margin-right"></i><span
+          class="w3-large w3-margin-right w3-text-red">Jueves, 19 de Diciembre. 21:00</span> <i class="fa fa-map-marker fa-fw w3-text-white w3-large w3-margin-right"></i> <a href=" https://maps.app.goo.gl/cwxDB6H5NMX2j1RW8"> Málaga. Centro Cultural La
+        Llave.</a></p>
+       
 
-    <!-- Grid for photos -->
-   <div class="gallery-container">
-  <img src="1.jpg" alt="Imagen 1">
-  <img src="2.jpg" alt="Imagen 2">
-  <img src="3.jpg" alt="Imagen 3">
-  <img src="4.jpg" alt="Imagen 4">
-  <img src="5.jpg" alt="Imagen 5">
-  <img src="6.jpg" alt="Imagen 6">
-  <img src="7.jpg" alt="Imagen 7">
-      <img src="8.jpg" alt="Imagen 7">
-      <img src="9.jpg" alt="Imagen 7">
-      <img src="10.jpg" alt="Imagen 7">
-      <img src="11.jpg" alt="Imagen 7">
-      <img src="12.jpg" alt="Imagen 7">
-      <img src="13.jpg" alt="Imagen 7">
-      <img src="14.jpg" alt="Imagen 7">
-      <img src="15.jpg" alt="Imagen 7">
-      <img src="16.jpg" alt="Imagen 7">
-      <img src="17.jpg" alt="Imagen 7">
-   
-</div>
-  <!-- End Portfolio Section -->
-  </div>
+      <!-- End About Section -->
+    </div>
 
-  <!-- Contact Section -->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-    <h2 class="w3-text-light-grey">Contacto</h2>
-    <hr style="width:200px" class="w3-opacity">
+    <!-- Portfolio Section -->
+    <div class="w3-padding-64 w3-content" id="photos">
+      <h2 class="w3-text-light-grey">Galeria</h2>
+      <hr style="width:200px" class="w3-opacity">
 
-    <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Málaga, ES</p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: adorandoamar@mail.com</p>
-      <p><i class="fa fa-instagram fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Instagram: @adorandoamar</p>
-    </div><br>
-  <!-- End Contact Section -->
-  </div>
-  
+      <!-- Grid for photos -->
+      <div class="gallery-container">
+        <img src="1.jpg" alt="Imagen 1">
+        <img src="14.jpg" alt="Imagen 14">
+        <img src="12.jpg" alt="Imagen 12">
+        <img src="15.jpg" alt="Imagen 15">
+        <img src="10.jpg" alt="Imagen 10">
+        <img src="4.jpg" alt="Imagen 4">
+        <img src="9.jpg" alt="Imagen 9">
+        <img src="6.jpg" alt="Imagen 6">
+        <img src="7.jpg" alt="Imagen 7">
+
+
+
+        <img src="2.jpg" alt="Imagen 2">
+
+
+
+
+        <img src="11.jpg" alt="Imagen 11">
+
+        <img src="13.jpg" alt="Imagen 13">
+
+      </div>
+      <!-- End Portfolio Section -->
+    </div>
+
+    <!-- Contact Section -->
+    <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+      <h2 class="w3-text-light-grey">Contacto</h2>
+      <hr style="width:200px" class="w3-opacity">
+
+      <div class="w3-section">
+        <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Málaga, ES</p>
+        <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: adorandoamar@mail.com
+        </p>
+        <p><i class="fa fa-instagram fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Instagram: @adorandoamar</p>
+      </div><br>
+      <!-- End Contact Section -->
+    </div>
+
     <!-- Footer -->
-  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
 
-    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-  <!-- End footer -->
-  </footer>
+      <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"
+          class="w3-hover-text-green">w3.css</a></p>
+      <!-- End footer -->
+    </footer>
 
-<!-- END PAGE CONTENT -->
-</div>
+    <!-- END PAGE CONTENT -->
+  </div>
 
 </body>
+
 </html>
