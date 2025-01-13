@@ -150,11 +150,10 @@
         <p><i>"Mi destino es pese a lo que parezca, magnífico. Antes decía que mi destino era, pese a lo que pareciera, muy duro." </i> - Dora Maar</p>
       <hr style="width:200px" class="w3-opacity">
       <h3 class="w3-padding-24 w3-text-light-grey">Trailer:</h3>
-      <div class="w3-container2 w3-display-container w3-center">
-        <div class="video-container" style="position: relative; width: 100%; max-width: 560px; aspect-ratio: 16/9;">
-  <a href="https://youtube.com/shorts/1AfbIpKW4Ck?si=IYeL6ZjLFAEKB8kl" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.youtube.com/vi/1AfbIpKW4Ck/hqdefault.jpg" alt="Video thumbnail" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;">
-  </a>
+      <div id="video-placeholder" style="position: relative; width: 100%; max-width: 560px; aspect-ratio: 16/9; background-color: #000; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+  <button id="load-video" style="padding: 10px 20px; font-size: 16px; color: #fff; background-color: #ff0000; border: none; cursor: pointer;">
+    Reproducir Video
+  </button>
 </div>
 
       </div>
@@ -225,6 +224,19 @@
     <!-- END PAGE CONTENT -->
   </div>
 
+            <script>
+  document.getElementById('load-video').addEventListener('click', function () {
+    const videoContainer = document.getElementById('video-placeholder');
+    videoContainer.innerHTML = `<iframe src="https://youtube.com/shorts/1AfbIpKW4Ck?si=IYeL6ZjLFAEKB8kl&autoplay=1"
+                                    loading="lazy"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen
+                                    style="width: 100%; height: 100%; border: none;">
+                                </iframe>`;
+  });
+</script>
+
 </body>
 
 </html>
+            
