@@ -9,6 +9,27 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
+            /* Estilos del contenedor que contiene el iframe */
+        .calendar-container {
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #222; /* Fondo gris oscuro para el contenedor */
+            border-radius: 8px; /* Bordes redondeados para un look más moderno */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil alrededor */
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none; /* Sin bordes */
+            border-radius: 8px; /* Bordes redondeados en el iframe */
+        }
+
+        /* Títulos y subtítulos */
+        h2, h3 {
+            text-align: center;
+        }
     body,
     h1,
     h2,
@@ -189,10 +210,13 @@
       
 </div>
 
-    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="actuaciones">
-            <h3 class="w3-padding-24 w3-text-light-grey">Próximas Actuaciones</h3>
-            <div id="eventsContainer"></div>
+<div class="w3-padding-32 w3-center">
+        <h2>Calendario de Actuaciones</h2>
+        
+        <div class="calendar-container">
+            <iframe src="https://calendar.google.com/calendar/embed?height=500&wkst=2&ctz=Europe%2FMadrid&showPrint=0&showNav=0&showTz=0&hl=es&mode=AGENDA&showCalendars=0&showTabs=0&showDate=0&title=Pr%C3%B3ximas%20Actuacciones&src=NDNjZThlZmEzM2M5MWFmZWJhYzczZTk4NDUxYzhmMjY1MmFkMzUzOWY3NzRmMjU1NGI0NTczY2RkMDFlOTBhNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23D50000" style="border-width:0" width="1000" height="500" frameborder="0" scrolling="no"></iframe>
         </div>
+    </div>
 
       </div>
      <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="actuaciones">
