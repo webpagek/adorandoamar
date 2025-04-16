@@ -96,6 +96,56 @@
     p {
       color:white;
     } 
+      /* Agrega el estilo para los eventos */
+        #eventsContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .event-item {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
+            width: calc(33% - 20px); /* 3 eventos por fila */
+            box-sizing: border-box;
+        }
+
+        .event-details {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.1em;
+        }
+
+        .event-date, .event-location {
+            display: flex;
+            align-items: center;
+        }
+
+        .event-location a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+        .event-location a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 900px) {
+            .event-item {
+                width: calc(50% - 20px); /* 2 eventos por fila en pantallas medianas */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .event-item {
+                width: 100%; /* 1 evento por fila en pantallas pequeñas */
+            }
+        }
+
   </style>
 </head>
 
@@ -138,6 +188,11 @@
       <hr style="width:200px" class="w3-opacity">
       
 </div>
+
+    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="actuaciones">
+            <h3 class="w3-padding-24 w3-text-light-grey">Próximas Actuaciones</h3>
+            <div id="eventsContainer"></div>
+        </div>
 
       </div>
      <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="actuaciones">
@@ -228,18 +283,8 @@
 
     <!-- END PAGE CONTENT -->
   </div>
-
-            <script>
-  document.getElementById('load-video').addEventListener('click', function () {
-    const videoContainer = document.getElementById('video-placeholder');
-    videoContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/1AfbIpKW4Ck"
-                                    loading="lazy"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowfullscreen
-                                    style="width: 100%; height: 100%; border: none;">
-                                </iframe>`;
-  });
-</script>
+<script src="events.js"></script>
+            
 
 </body>
 
