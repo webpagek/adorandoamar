@@ -1,13 +1,21 @@
+// URL del calendario público en formato ICS
 const icsUrl = 'https://calendar.google.com/calendar/ical/43ce8efa33c91afebac73e98451c8f2652ad3539f774f2554b4573cdd01e90a4%40group.calendar.google.com/public/basic.ics';
 
-fetch(icsUrl)
+// Utilizar un proxy CORS para evitar el error
+const corsProxyUrl = 'https://cors-anywhere.herokuapp.com/';
+
+// Realiza la solicitud GET utilizando el proxy
+fetch(corsProxyUrl + icsUrl)
   .then(response => response.text())
   .then(data => {
-    const events = parseICS(data);
-    displayEvents(events);
+    const events = parseICS(data); // Procesar los datos ICS
+    displayEvents(events); // Mostrar los eventos en el HTML
   })
-  .catch(error => console.error('Error al cargar el calendario:', error));
+  .catch(error => {
+    console.error('Error al cargar el calendario:', error);
+  });
 
+// Función para analizar el archivo ICS y extraer los eventos
 function parseICS(data) {
   const events = [];
   const regex = /BEGIN:VEVENT([\s\S]*?)END:VEVENT/g;
@@ -29,6 +37,7 @@ function parseICS(data) {
   return events;
 }
 
+// Función para mostrar los eventos en el HTML
 function displayEvents(events) {
   const container = document.getElementById('eventsContainer');
   const now = new Date();
@@ -38,13 +47,13 @@ function displayEvents(events) {
       event.startDate = new Date(event.start);
       return event;
     })
-    .filter(event => event.startDate >= now)
-    .sort((a, b) => a.startDate - b.startDate)
+    .filter(event => event.startDate >= now) // Filtrar eventos futuros
+    .sort((a, b) => a.startDate - b.startDate) // Ordenar por fecha
     .forEach(event => {
       const dateStr = `${formatDate(event.start)} ${formatTime(event.start)}`;
       const title = event.title || 'Evento';
       const [url, locationName] = event.location?.includes('|')
-        ? event.location.split('|')
+        ? event.location.split('|') // Si hay una URL en la ubicación
         : [null, event.location];
 
       const eventItem = document.createElement('div');
@@ -63,6 +72,7 @@ function displayEvents(events) {
     });
 }
 
+// Función para formatear la fecha en formato largo
 function formatDate(dateStr) {
   const date = new Date(dateStr);
   return date.toLocaleDateString('es-ES', {
@@ -72,6 +82,7 @@ function formatDate(dateStr) {
   });
 }
 
+// Función para formatear la hora
 function formatTime(dateStr) {
   const date = new Date(dateStr);
   return date.toLocaleTimeString('es-ES', {
