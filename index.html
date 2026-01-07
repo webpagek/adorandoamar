@@ -31,7 +31,33 @@
     a {
       color: var(--dark-red);
       text-decoration: none;
+ 
     }
+
+    .btn {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  background-color: var(--dark-red);
+  color: var(--light);
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #b91f1f;
+  box-shadow: 0 6px 16px rgba(219, 38, 38, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+}
 
     h1,
     h2,
@@ -61,6 +87,7 @@
     .hero h1 {
       font-size: clamp(2.5rem, 5vw, 4rem);
       margin-bottom: 1rem;
+      padding-top:35%;
       color:var(--dark-red);
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
       
@@ -82,10 +109,11 @@
     .section-title {
       text-align: center;
       margin-bottom: 3rem;
+      color: var(--dark-red);
     }
 
     .section-title span {
-      color: white;
+       color: var(--dark-red);
     }
 
     /* ===== GALERIA ===== */
@@ -232,10 +260,10 @@
     <p>Un monólogo sobre Dora Maar</p>
 
         <div class="social">
-      <a href="https://instagram.com" target="_blank">
+      <a href="https://www.instagram.com/adorandoamar/" target="_blank">
         <i class="fab fa-instagram"></i>
       </a>
-      <a href="https://youtube.com" target="_blank">
+      <a href="https://www.youtube.com/watch?v=1AfbIpKW4Ck&ab_channel=DoraMaar" target="_blank">
         <i class="fab fa-youtube"></i>
       </a>
     </div>
@@ -252,14 +280,32 @@
   <!-- FECHAS -->
   <section>
     <div class="section-title">
-      <h2>Próximos <span>Teatros</span></h2>
+      <h2>Próximos <span>Monólogos</span></h2>
      
 
     </div>
 
 
     <div class="dates">
-                <p>¿Adorando qué? Amar</p>
+          
+      <div class="date-card">
+        <h3><span>27 Marzo, 20.30h</span></h3>
+        <h3>La Cochera Cabaret</h3>
+        <p>Málaga</p>
+            <a href="https://lacocheraentradas.com/%0Ashows/details/2400/adorando-amar" class="btn">
+        Comprar Entradas
+      </a>
+      </div>
+
+      <div class="date-card">
+      <h3><span>17 Febrero, 18:00</span></h3>
+        <h3>Casa Natal Pablo Picasso</h3>
+        <p>Malaga</p>
+       
+<br/>
+<br/>
+<br/>
+            <p>¿Adorando qué? Amar</p>
 
       <p>¿Quién? Dora Maar</p>
 
@@ -275,22 +321,6 @@
       <p> Sí, y en tu ciudad, aquí y allí. </p>
       <p><i>"Mi destino es pese a lo que parezca, magnífico. Antes decía que mi destino era, pese a lo que pareciera,
           muy duro." </i> - Dora Maar</p>
-      <div class="date-card">
-        <h3><span>27 Marzo, 20.30h</span></h3>
-        <h3>La Cochera Cabaret</h3>
-        <p>Málaga</p>
-            <a href="https://forms.gle/uDeynF2KmWNWDim4A" class="w3-button w3-red w3-padding-large w3-large w3-round">
-        Comprar Entradas
-      </a>
-      </div>
-
-      <div class="date-card">
-      <h3><span>17 Febrero</span></h3>
-        <h3>Casa Natal Pablo Picasso</h3>
-        <p>Malaga</p>
-        <a href="https://forms.gle/uDeynF2KmWNWDim4A" class="w3-button w3-red w3-padding-large w3-large w3-round">
-       Reservar Entradas
-      </a>
       </div>
     </div>
   </section>
@@ -308,8 +338,12 @@
         rescatando su voz como fotógrafa, pintora y creadora esencial del siglo XX. A través de fotografías
         reinterpretadas, textos poéticos y un recorrido por las distintas etapas de su vida —del surrealismo a la crisis
         interior y la madurez—, el proyecto dialoga entre pasado y presente, arte y memoria, para reivindicar a Dora
-        Maar y, con ella, a otras mujeres artistas cuya obra merece ser vista y reconocida desde nuevas perspectivas.
+        Maar y, con ella, a otras mujeres artistas cuya obra merece ser vista y reconocida desde nuevas perspectivas. <br/>
+        <a href="https://amzn.eu/d/bZs5TZ2" class="btn">
+       Comprar Libro en Amazon
+      </a>
       </p>
+      
     </div>
   </section>
 
@@ -340,11 +374,11 @@
     <ul>
       <li>
         <span>Email</span>
-        contacto@email.com
+        adorandoamar@mail.com
       </li>
       <li>
-        <span>Teléfono</span>
-        +34 600 000 000
+        <span>Instagram</span>
+         <a href="https://www.instagram.com/adorandoamar/"> @adorandoamar </a>
       </li>
       <li>
         <span>Ciudad</span>
