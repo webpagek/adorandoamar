@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <title>Adorando Amar</title>
 
   <style>
     :root {
       --black: #0e0e0e;
-      --dark-red: #db2626;
+      --dark-red: #b11616;
       --light: #f2f2f2;
     }
 
@@ -30,7 +33,9 @@
       text-decoration: none;
     }
 
-    h1, h2, h3 {
+    h1,
+    h2,
+    h3 {
       font-weight: 600;
       letter-spacing: 1px;
     }
@@ -48,19 +53,29 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      background: 
-      url("img/12.webp") center/cover no-repeat;
+      background: linear-gradient(rgba(0, 0, 0, 0.40),
+          rgba(0, 0, 0, 0.80)),
+        url("img/dora.webp") center / contain no-repeat;
     }
 
     .hero h1 {
       font-size: clamp(2.5rem, 5vw, 4rem);
       margin-bottom: 1rem;
+      color:var(--dark-red);
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+      
     }
 
     .hero p {
       text-transform: uppercase;
       letter-spacing: 3px;
-      color: var(--dark-red);
+      color: white;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+
+    }
+
+    .autor  {
+      padding-top: 40%;
     }
 
     /* ===== TITULOS ===== */
@@ -70,7 +85,7 @@
     }
 
     .section-title span {
-      color: var(--dark-red);
+      color: white;
     }
 
     /* ===== GALERIA ===== */
@@ -87,6 +102,8 @@
       border: 2px solid var(--dark-red);
       transition: transform 0.3s ease, opacity 0.3s ease;
     }
+
+
 
     .gallery img:hover {
       transform: scale(1.03);
@@ -125,7 +142,7 @@
     }
 
     .about img {
-      width: 100%;
+      max-height: 600px;
       border: 2px solid var(--dark-red);
     }
 
@@ -145,6 +162,54 @@
       margin-bottom: 0.2rem;
     }
 
+
+  /* ===== REDES SOCIALES ===== */
+/* ===== REDES SOCIALES HERO ===== */
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.social a {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--dark-red);
+  border-radius: 50%;
+   background-color: var(--dark-red);
+   color: var(--black);
+  
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+}
+
+.social a:hover {
+     background-color: var(--light);
+  color: var(--dark-red);
+  transform: scale(1.1);
+}
+
+/* ===== BOTONES ===== */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid var(--dark-red);
+  color: var(--light);
+  transition: 0.3s;
+  font-size: 0.9rem;
+}
+
+.btn:hover {
+  background: var(--dark-red);
+}
+
+
+
     /* ===== FOOTER ===== */
     footer {
       text-align: center;
@@ -158,14 +223,29 @@
 <body>
 
   <!-- HERO -->
-  <header class="hero">
-    <div>
-      <h1>Adorando Amar</h1>
-      <p>Un monólogo sobre Dora Maar</p>
-      			<a href="#" class="social-item"><span class="icon-instagram2"></span></a>
-						<a href="#" class="social-item"><span class="icon-vimeo"></span></a>
+ <header class="hero">
+  <div>
+    <h1>Adorando Amar</h1>
+
+
+
+    <p>Un monólogo sobre Dora Maar</p>
+
+        <div class="social">
+      <a href="https://instagram.com" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://youtube.com" target="_blank">
+        <i class="fab fa-youtube"></i>
+      </a>
     </div>
-  </header>
+     <div class="autor">
+      <p>Escrito y dirigido por: Alba Berrocal</p>
+    <p>Fotografía: Reyes Cuesta</p>
+     </div>
+    
+  </div>
+</header>
 
 
 
@@ -173,19 +253,44 @@
   <section>
     <div class="section-title">
       <h2>Próximos <span>Teatros</span></h2>
+     
+
     </div>
 
+
     <div class="dates">
+                <p>¿Adorando qué? Amar</p>
+
+      <p>¿Quién? Dora Maar</p>
+
+      <p> Dora Maar... ¿La fotógrafa, la artista, la amante que llora, la pintora, la surrealista católica, la de
+        izquierdas, la que se sienta a la derecha, la de negro o la que dió en el blanco?
+
+        Todas, ninguna. La única.</p>
+      <p> <i>"Dorita, la fotógrafa, insoportable cantaora... y qué fea"</i></p>
+
+
+      <p> ¿En París?</p>
+
+      <p> Sí, y en tu ciudad, aquí y allí. </p>
+      <p><i>"Mi destino es pese a lo que parezca, magnífico. Antes decía que mi destino era, pese a lo que pareciera,
+          muy duro." </i> - Dora Maar</p>
       <div class="date-card">
         <h3><span>27 Marzo, 20.30h</span></h3>
         <h3>La Cochera Cabaret</h3>
         <p>Málaga</p>
+            <a href="https://forms.gle/uDeynF2KmWNWDim4A" class="w3-button w3-red w3-padding-large w3-large w3-round">
+        Comprar Entradas
+      </a>
       </div>
 
       <div class="date-card">
-        <h2>17 Febrero</h2>
-        <h3>Teatro Central</h3>
-        <p>Sevilla</p>
+      <h3><span>17 Febrero</span></h3>
+        <h3>Casa Natal Pablo Picasso</h3>
+        <p>Malaga</p>
+        <a href="https://forms.gle/uDeynF2KmWNWDim4A" class="w3-button w3-red w3-padding-large w3-large w3-round">
+       Reservar Entradas
+      </a>
       </div>
     </div>
   </section>
@@ -197,19 +302,21 @@
     </div>
 
     <div class="about">
-      <img src="images/image_1.jpg" alt="">
+      <img src="img/book.jpg" alt="">
       <p>
-        Un viaje íntimo y poético a través del amor, la pérdida y la memoria.
-        Una obra escénica que dialoga con la figura de Dora Maar desde la palabra
-        y el silencio.
+        Este libro propone una mirada íntima y contemporánea sobre Dora Maar, más allá de su papel como musa de Picasso,
+        rescatando su voz como fotógrafa, pintora y creadora esencial del siglo XX. A través de fotografías
+        reinterpretadas, textos poéticos y un recorrido por las distintas etapas de su vida —del surrealismo a la crisis
+        interior y la madurez—, el proyecto dialoga entre pasado y presente, arte y memoria, para reivindicar a Dora
+        Maar y, con ella, a otras mujeres artistas cuya obra merece ser vista y reconocida desde nuevas perspectivas.
       </p>
     </div>
   </section>
 
-    <!-- GALERIA -->
+  <!-- GALERIA -->
   <section>
     <div class="section-title">
-      <h2>Galería <span>Fotográfica</span></h2>
+      <h2>Galería</h2>
     </div>
 
     <div class="gallery">
@@ -227,7 +334,7 @@
   <!-- CONTACTO -->
   <section class="contact">
     <div class="section-title">
-      <h2>Ponte en <span>Contacto</span></h2>
+      <h2><span>Contacto</span></h2>
     </div>
 
     <ul>
@@ -252,4 +359,5 @@
   </footer>
 
 </body>
+
 </html>
