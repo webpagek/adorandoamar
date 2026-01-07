@@ -1,127 +1,256 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="es">
 <head>
-  <title>Adorando Amar - Un Monólogo sobre Dora Maar</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adorando Amar</title>
+
+  <style>
+    :root {
+      --black: #0e0e0e;
+      --dark-red: #db2626;
+      --light: #f2f2f2;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: var(--black);
+      color: var(--light);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--dark-red);
+      text-decoration: none;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    section {
+      padding: 4rem 1.5rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: 
+      url("img/dora.webp") center/cover no-repeat;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--dark-red);
+    }
+
+    /* ===== TITULOS ===== */
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-title span {
+      color: var(--dark-red);
+    }
+
+    /* ===== GALERIA ===== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 2px solid var(--dark-red);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+      opacity: 0.85;
+    }
+
+    /* ===== FECHAS ===== */
+    .dates {
+      display: grid;
+      gap: 1.5rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .date-card {
+      border-left: 4px solid var(--dark-red);
+      padding-left: 1rem;
+    }
+
+    .date-card span {
+      color: var(--dark-red);
+      font-size: 0.9rem;
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .about {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+      }
+    }
+
+    .about img {
+      width: 100%;
+      border: 2px solid var(--dark-red);
+    }
+
+    /* ===== CONTACTO ===== */
+    .contact ul {
+      list-style: none;
+      display: grid;
+      gap: 1rem;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .contact li span {
+      display: block;
+      color: var(--dark-red);
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      border-top: 1px solid var(--dark-red);
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 
-<body class="w3-black">
+<body>
 
-  <!-- Page Content -->
-  <div class="w3-padding-large" id="main">
-    <!-- Header/Home -->
-    <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-      <h1 class="w3-jumbo w3-text-red">Adorando Amar</h1>
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <h1>Adorando Amar</h1>
       <p>Un monólogo sobre Dora Maar</p>
-      
-
-        <img src="img/dora.webp" alt="Dora Maar" class="w3-image w3-round-large" width="300" fetchpriority="high">
-        <p style="text-align:center;">
-          <a href="https://www.youtube.com/watch?v=1AfbIpKW4Ck&ab_channel=DoraMaar" target="_blank" class="w3-button w3-red w3-padding-large w3-large w3-round">Ver Tráiler</a>
-        </p>
-     
-        <p> Escrito y dirigido por: Alba Berrocal</p>
-        <p> Fotografía: Reyes Cuesta</p>
-    </header>
-
-    <!-- About Section -->
-    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-      <hr style="width:200px" class="w3-opacity">
-      <p>¿Adorando qué? Amar</p>
-
-      <p>¿Quién? Dora Maar</p>
-        
-      <p> Dora Maar... ¿La fotógrafa, la artista, la amante que llora, la pintora, la surrealista católica, la de izquierdas, la que se sienta a la derecha, la de negro o la que dió en el blanco?
-        
-        Todas, ninguna. La única.</p>
-        <p>  <i>"Dorita, la fotógrafa, insoportable cantaora... y qué fea"</i></p>
-        
-        
-        <p> ¿En París?</p>
-        
-        <p> Sí, y en tu ciudad, aquí y allí. </p>
-        <p><i>"Mi destino es pese a lo que parezca, magnífico. Antes decía que mi destino era, pese a lo que pareciera, muy duro." </i> - Dora Maar</p>
-      <hr style="width:200px" class="w3-opacity">
-
-          <a href="https://forms.gle/uDeynF2KmWNWDim4A" class="w3-button w3-red w3-padding-large w3-large w3-round">
-            ¡Reserva tus entradas gratis aquí!
-        </a>
-</div>
-
-<div class="w3-padding-32 w3-center">
-        <h2>Calendario de Próximas Actuaciones</h2>
-        
-        <div class="calendar-container">
-        <iframe src="https://calendar.google.com/calendar/embed?height=500&wkst=2&ctz=Europe%2FMadrid&showPrint=0&showNav=0&showTz=0&hl=es&mode=AGENDA&showCalendars=0&showTabs=0&showDate=0&title=Pr%C3%B3ximas%20Actuacciones&src=NDNjZThlZmEzM2M5MWFmZWJhYzczZTk4NDUxYzhmMjY1MmFkMzUzOWY3NzRmMjU1NGI0NTczY2RkMDFlOTBhNEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23FF0000&bgcolor=transparent" style="border-width:0" width="1000" height="500" frameborder="0" scrolling="no"></iframe>
-  
-        </div>
+      			<a href="#" class="social-item"><span class="icon-instagram2"></span></a>
+						<a href="#" class="social-item"><span class="icon-vimeo"></span></a>
+    </div>
+  </header>
 
 
+
+  <!-- FECHAS -->
+  <section>
+    <div class="section-title">
+      <h2>Próximos <span>Teatros</span></h2>
     </div>
 
+    <div class="dates">
+      <div class="date-card">
+        <h3><span>27 Marzo, 20.30h</span></h3>
+        <h3>La Cochera Cabaret</h3>
+        <p>Málaga</p>
       </div>
-     
 
-
-    <!-- Portfolio Section -->
-    <div class="w3-padding-64 w3-content" id="photos">
-      <h2 class="w3-text-light-grey">Galeria</h2>
-      <hr style="width:200px" class="w3-opacity">
-
-      <!-- Grid for photos -->
-      <div class="gallery-container">
-        <img src="img/1.webp" alt="Imagen 1" loading="lazy">
-        <img src="img/14.webp" alt="Imagen 14" loading="lazy">
-        <img src="img/12.webp" alt="Imagen 12" loading="lazy">
-        <img src="img/15.webp" alt="Imagen 15" loading="lazy">
-        <img src="img/10.webp" alt="Imagen 10" loading="lazy">
-        <img src="img/4.webp" alt="Imagen 4" loading="lazy">
-        <img src="img/9.webp" alt="Imagen 9" loading="lazy">
-        <img src="img/6.webp" alt="Imagen 6" loading="lazy">
-        <img src="img/7.webp" alt="Imagen 7" loading="lazy">
-        <img src="img/2.webp" alt="Imagen 2" loading="lazy">
-        <img src="img/11.webp" alt="Imagen 11" loading="lazy">
-        <img src="img/13.webp" alt="Imagen 13" loading="lazy">
+      <div class="date-card">
+        <h2>17 Febrero</h2>
+        <h3>Teatro Central</h3>
+        <p>Sevilla</p>
       </div>
-      <!-- End Portfolio Section -->
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <div class="section-title">
+      <h2>Libro <span>Adorando Amar</span></h2>
     </div>
 
-    <!-- Contact Section -->
-    <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-      <h2 class="w3-text-light-grey">Contacto</h2>
-      <hr style="width:200px" class="w3-opacity">
+    <div class="about">
+      <img src="images/image_1.jpg" alt="">
+      <p>
+        Un viaje íntimo y poético a través del amor, la pérdida y la memoria.
+        Una obra escénica que dialoga con la figura de Dora Maar desde la palabra
+        y el silencio.
+      </p>
+    </div>
+  </section>
 
-      <div class="w3-section">
-        <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Málaga, ES</p>
-        <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: adorandoamar@mail.com
-        </p>
-        <p><i class="fa fa-instagram fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Instagram: <a href="https://www.instagram.com/adorandoamar/"> @adorandoamar </a></p>
-      </div><br>
-
-     
-      <!-- End Contact Section -->
+    <!-- GALERIA -->
+  <section>
+    <div class="section-title">
+      <h2>Galería <span>Fotográfica</span></h2>
     </div>
 
-    <!-- Footer -->
-    <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <div class="gallery">
+      <img src="img/1.webp" alt="">
+      <img src="img/1.webp" alt="">
+      <img src="img/2.webp" alt="">
+      <img src="img/3.webp" alt="">
+      <img src="img/4.webp" alt="">
+      <img src="img/5.webp" alt="">
+      <img src="img/6.webp" alt="">
+      <img src="img/7.webp" alt="">
+      <img src="img/8.webp" alt="">
+    </div>
+  </section>
 
-      <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"
-          class="w3-hover-text-green">w3.css</a></p>
-      <!-- End footer -->
-    </footer>
+  <!-- CONTACTO -->
+  <section class="contact">
+    <div class="section-title">
+      <h2>Ponte en <span>Contacto</span></h2>
+    </div>
 
-    <!-- END PAGE CONTENT -->
-  </div>
+    <ul>
+      <li>
+        <span>Email</span>
+        contacto@email.com
+      </li>
+      <li>
+        <span>Teléfono</span>
+        +34 600 000 000
+      </li>
+      <li>
+        <span>Ciudad</span>
+        Málaga, España
+      </li>
+    </ul>
+  </section>
 
-            
+  <!-- FOOTER -->
+  <footer>
+    © 2026 · Adorando Amar
+  </footer>
 
 </body>
-
 </html>
-            
